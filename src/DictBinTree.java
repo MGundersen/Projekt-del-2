@@ -1,17 +1,15 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+/*
+        MADE BY MATHIAS GUNDERSEN, D3 AND DANIEL JØRGENSEN, D3
+*/
 public class DictBinTree implements Dict {
 
     Integer size = 0;
     Element header;
     private Integer counter = 0;
-    private ArrayList<Element> listOfOrderedElements = new ArrayList<>();
+    public int[] anArray;
 
-    public DictBinTree(Element e) {
-        header = e;
-        size += 1;
+    public DictBinTree() {
+
     }
 
     @Override
@@ -42,15 +40,14 @@ public class DictBinTree implements Dict {
     }
 
     @Override
-    public ArrayList<Element> orderedTraversal(Element x) {
-        //Den skal returne en liste, men lige nu printer den bare.
+    public int[] orderedTraversal(Element x) {
         if (x != null) {
             orderedTraversal(x.left);
-            listOfOrderedElements.add(counter,x);
+            anArray[counter] = x.getKey();
             counter++;
             orderedTraversal(x.right);
         }
-     return listOfOrderedElements;
+     return anArray;
     }
 
     @Override
