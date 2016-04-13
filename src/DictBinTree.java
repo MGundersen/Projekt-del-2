@@ -1,5 +1,5 @@
 /*
-        MADE BY MATHIAS GUNDERSEN, D3 AND DANIEL JØRGENSEN, D3
+        MADE BY MGUND15, D3 AND DANJO14, D3
 */
 public class DictBinTree implements Dict {
 
@@ -13,7 +13,8 @@ public class DictBinTree implements Dict {
     }
 
     @Override
-    public void insert(Element z) {
+    public void insert(Integer k) {
+        Element z = new Element(k);
         size ++;
 
         Element y = null;
@@ -40,28 +41,41 @@ public class DictBinTree implements Dict {
     }
 
     @Override
-    public int[] orderedTraversal(Element x) {
-        if (x != null) {
-            orderedTraversal(x.left);
-            anArray[counter] = x.getKey();
-            counter++;
-            orderedTraversal(x.right);
-        }
+    public int[] orderedTraversal() {
+     anArray = new int[size];
+     orderedTraversalInner(header);
      return anArray;
     }
 
+    private void orderedTraversalInner(Element x) {
+        if (x != null) {
+            orderedTraversalInner(x.left);
+            anArray[counter] = x.getKey();
+            counter++;
+            orderedTraversalInner(x.right);
+        }
+    }
+
     @Override
-    public Element search(Element x, Integer k) {
+    public Boolean search(Integer k) {
+        return searchInner(header,k);
+    }
+
+    private Boolean searchInner(Element x, Integer k) {
+        if (header == null) {
+            return false;
+        }
         if (k == x.getKey()) {
-            System.out.println("Element was found");
-            return x;
+            return true;
         }
         if (k < x.getKey()) {
-            System.out.println("We search to the left");
-            return search(x.getLeft(),k);
+            if ( x.getLeft() == null) {
+                return false;
+            } else return searchInner(x.getLeft(),k);
         } else{
-            System.out.println("We search to the right");
-            return search(x.getRight(),k);
+            if ( x.getRight() == null) {
+                return false;
+            } else return searchInner(x.getRight(),k);
         }
     }
 }

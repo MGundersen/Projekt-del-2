@@ -1,5 +1,5 @@
 /*
-        MADE BY MATHIAS GUNDERSEN, D3 AND DANIEL JØRGENSEN, D3
+        MADE BY MGUND15, D3 AND DANJO14, D3
 */
 public class Element {
 
