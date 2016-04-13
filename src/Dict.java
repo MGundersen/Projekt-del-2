@@ -1,16 +1,6 @@
 /*
-        MADE BY MGUND15, D3 AND DANJO14, D3
+        MADE BY Mathias Gundersen(MGUND15), D3 AND Daniel Jørgensen(DANJO14), D3
 */
-/*
-public interface Dict {
-    public void insert(int k);
-    public int[] orderedTraversal();
-    public boolean search(int k);
-
-}
-*/
-
-
 
 public interface Dict {
 

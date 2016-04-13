@@ -1,6 +1,7 @@
 /*
-        MADE BY MGUND15, D3 AND DANJO14, D3
+        MADE BY Mathias Gundersen(MGUND15), D3 AND Daniel Jørgensen(DANJO14), D3
 */
+
 public class DictBinTree implements Dict {
 
     Integer size = 0;
